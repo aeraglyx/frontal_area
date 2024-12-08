@@ -4,15 +4,15 @@ Tool for calculating frontal area of a human body from images and finding how it
 
 Under the hood, it uses [rembg](https://github.com/danielgatis/rembg) to generate mattes, their alpha gets summed and converted to area. Then, we can perform curve fitting to get the coefficients of a power law like this:
 
-$$ A = a * m ^ b $$
+$$ A = a \cdot m ^ b $$
 
-If we assume human bodies scale proportionally, then $b = 2/3$. If we relate $m$ and $h$ using the BMI formula, we would get $b = 3/4$.
+If we assume human bodies scale proportionally, then $b = \frac{2}{3}$. If we relate $m$ and $h$ using the BMI formula, we would get $b = \frac{3}{4}$. My data (4 lower BMI subjects, multiple photos each) suggests these coefficients (for a board sport stance):
 
-My data (4 lower BMI subjects, multiple photos each) suggests these coefficients (for a board sport stance):
 $$a = 0.016 ± 0.010$$
+
 $$b = 0.802 ± 0.149$$
 
-If we assume the true $b$ is indeed $3/4$, then $a$ would be roughly $0.02$.
+If we assume the true $b$ is indeed $\frac{3}{4}$, then $a$ would be roughly $0.02$.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ If we assume the true $b$ is indeed $3/4$, then $a$ would be roughly $0.02$.
 
 The `input` directory should contain subdirectories for different subjects/measurements, each containing at least one photo of the person.
 
-> Tip - shoot from far away with bigger zoom to approximate orthographic projection.
+> TIP - Shoot from far away with bigger zoom to approximate orthographic projection.
 
 You should also have one photo from the same distance where the person holds a 1 meter stick perpendicular to the camera. Measure it in pixels (e.g. in [Gimp](https://www.gimp.org/)) and record it along with the persons mass to `data_in.csv`:
 
