@@ -49,13 +49,13 @@ print("")
 
 
 
-# x_fit = np.linspace(20, 100, 81)
-# y_fit = power_law(x_fit, *popt)
+x_fit = np.linspace(20, 100, 81)
+y_fit = power_law(x_fit, *popt)
 
-# plt.plot(x_fit, y_fit, label="Fit")
-# plt.scatter(mass, area, label="Data")
+plt.scatter(mass, area, label="Data")
+plt.plot(x_fit, y_fit, label="Fit")
 
-# plt.xlabel("Mass [kg]")
-# plt.ylabel("Area [m^2]")
-# plt.legend()
-# plt.show()
+plt.xlabel("Mass [kg]")
+plt.ylabel("Area [m^2]")
+plt.legend()
+plt.show()
